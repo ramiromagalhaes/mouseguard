@@ -67,7 +67,7 @@
                                         parseInt(ability.system.pass) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -78,7 +78,7 @@
                                         parseInt(ability.system.pass) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </pass>
@@ -95,7 +95,7 @@
                                         parseInt(ability.system.fail) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -106,7 +106,7 @@
                                         parseInt(ability.system.fail) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </fail>

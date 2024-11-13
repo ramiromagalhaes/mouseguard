@@ -20,7 +20,7 @@
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddTrait")}
             data-type="wise"
-            ><i class="fas fa-plus" />
+            ><i class="fas fa-plus"></i>
             {game.i18n.localize("MOUSEGUARD.AddTrait")}</a
         >
     </div>
@@ -65,7 +65,7 @@
                                         parseInt(trait.system.usedfor) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -76,7 +76,7 @@
                                         parseInt(trait.system.usedfor) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </for>
@@ -93,7 +93,7 @@
                                         parseInt(trait.system.usedagainst) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -104,7 +104,7 @@
                                         parseInt(trait.system.usedagainst) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </pass>
@@ -113,7 +113,7 @@
                 <a
                     on:click={sheet?._onItemDelete(trait.id)}
                     class="item-control item-delete"
-                    title="Delete Item"><i class="fas fa-trash" /></a
+                    title="Delete Item"><i class="fas fa-trash"></i></a
                 >
             </div>
         </trait>

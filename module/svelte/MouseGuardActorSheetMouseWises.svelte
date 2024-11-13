@@ -18,7 +18,7 @@
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddWise")}
             data-type="wise"
-            ><i class="fas fa-plus" />
+            ><i class="fas fa-plus"></i>
             {game.i18n.localize("MOUSEGUARD.AddWise")}</a
         >
     </div>
@@ -62,7 +62,7 @@
                                         parseInt(wise.system.pass) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -73,7 +73,7 @@
                                         parseInt(wise.system.pass) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </pass>
@@ -90,7 +90,7 @@
                                         parseInt(wise.system.fail) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -101,7 +101,7 @@
                                         parseInt(wise.system.fail) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </fail>
@@ -110,7 +110,7 @@
                 <a
                     on:click={sheet?._onItemDelete(wise.id)}
                     class="item-control item-delete"
-                    title="Delete Item"><i class="fas fa-trash" /></a
+                    title="Delete Item"><i class="fas fa-trash"></i></a
                 >
             </div>
         </wise>

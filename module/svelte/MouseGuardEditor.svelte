@@ -57,7 +57,7 @@
 </script>
 
 <div class="editor">
-    <span />
+    <span></span>
     <div
         class="editor-content"
         data-edit={target}
@@ -68,7 +68,7 @@
     </div>
     {#if $sheetData.editable}
         <a class="editor-edit" on:click|preventDefault={createEditor}>
-            <i class="fas fa-edit" />
+            <i class="fas fa-edit"></i>
         </a>
     {/if}
 </div>

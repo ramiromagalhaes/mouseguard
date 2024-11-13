@@ -20,7 +20,7 @@
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddSkill")}
             data-type="wise"
-            ><i class="fas fa-plus" />
+            ><i class="fas fa-plus"></i>
             {game.i18n.localize("MOUSEGUARD.AddSkill")}</a
         >
     </div>
@@ -64,7 +64,7 @@
                                         parseInt(skill.system.pass) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -75,7 +75,7 @@
                                         parseInt(skill.system.pass) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </pass>
@@ -92,7 +92,7 @@
                                         parseInt(skill.system.fail) - 1
                                     )}
                                 class="checkmark"
-                            />
+                            ></div>
                         {:else}
                             <div
                                 on:click={(e) =>
@@ -103,7 +103,7 @@
                                         parseInt(skill.system.fail) + 1
                                     )}
                                 class="no-checkmark"
-                            />
+                            ></div>
                         {/if}
                     {/each}
                 </fail>
@@ -112,7 +112,7 @@
                 <a
                     on:click={sheet?._onItemDelete(skill.id)}
                     class="item-control item-delete"
-                    title="Delete Item"><i class="fas fa-trash" /></a
+                    title="Delete Item"><i class="fas fa-trash"></i></a
                 >
             </div>
         </skill>

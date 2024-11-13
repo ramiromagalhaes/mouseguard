@@ -124,7 +124,7 @@
                         <a
                             on:click={sheet?._onItemDelete(trait._id)}
                             class="item-control item-delete"
-                            title="Delete Item"><i class="fas fa-trash" /></a
+                            title="Delete Item"><i class="fas fa-trash"></i></a
                         >
                     </div>
                 </trait>
@@ -165,7 +165,7 @@
                 <a
                     on:click={sheet?._onItemDelete(wise._id)}
                     class="item-control item-delete"
-                    title="Delete Item"><i class="fas fa-trash" /></a
+                    title="Delete Item"><i class="fas fa-trash"></i></a
                 >
             </div>
         </wise>
