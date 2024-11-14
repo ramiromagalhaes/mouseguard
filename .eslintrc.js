@@ -3,16 +3,15 @@ module.exports = {
         browser: true,
         es2021: true
     },
-    extends: "eslint:recommended",
+    extends: ["plugin:svelte/recommended"],
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module"
     },
-    plugins: ["svelte3"],
+    plugins: ["svelte"],
     overrides: [
         {
             files: ["*.svelte"],
-            processor: "svelte3/svelte3",
             excludedFiles: "node_modules/**/*"
         }
     ],

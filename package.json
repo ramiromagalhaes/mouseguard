@@ -1,28 +1,28 @@
 {
-  "name": "mouseguard",
-  "version": "1.0.0",
-  "description": "CSS compiler for the MouseGuard system",
-  "scripts": {
-    "build": "gulp build",
-    "css": "gulp css",
-    "watch": "gulp",
-    "gulp": "gulp"
-  },
-  "browserslist": [
-    "last 3 versions"
-  ],
-  "author": "",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "esbuild-svelte": "^0.9.0",
-    "gulp": "^5.0.0",
-    "gulp-less": "^5.0.0",
-    "svelte": "^5.1.15"
-  },
-  "devDependencies": {
-    "esbuild": "0.24.0",
-    "eslint": "^9.14.0",
-    "eslint-plugin-svelte": "^2.46.0"
-  }
+    "name": "mouseguard",
+    "version": "0.2.5",
+    "description": "CSS compiler for the MouseGuard system",
+    "scripts": {
+        "build": "gulp build",
+        "css": "gulp css",
+        "watch": "gulp",
+        "gulp": "gulp"
+    },
+    "browserslist": [
+        "last 3 versions"
+    ],
+    "author": "",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "esbuild-svelte": "^0.9.0",
+        "gulp": "^5.0.0",
+        "gulp-less": "^5.0.0",
+        "svelte": "^5.1.15"
+    },
+    "devDependencies": {
+        "esbuild": "0.24.0",
+        "eslint": "^9.14.0",
+        "eslint-plugin-svelte": "^2.46.0"
+    }
 }
