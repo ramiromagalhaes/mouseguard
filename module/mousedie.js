@@ -69,7 +69,9 @@ export class MouseRoll extends Roll {
         );
 
         // Execute the roll, if needed
-        if (!this._evaluated) this.evaluate();
+        if (!this._evaluated) await this.evaluateSync();
+
+        console.log(JSON.stringify(this));
 
         // Define chat data
         let chatData = await mouseChatData(this, chatOptions);

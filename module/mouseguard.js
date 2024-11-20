@@ -30,12 +30,7 @@ import { statusEffects } from "./status-effects.js";
  * Init hook.
  */
 Hooks.once("init", async function () {
-    console.log(`Initializing MouseGuard MouseGuard System`);
-
-    /**
-     * Set an initiative formula for the system. This will be updated later.
-     * @type {String}
-     */
+    console.log(`Initializing MouseGuard System`);
 
     let RollCount = 0;
     let RollMessage = "";
@@ -51,10 +46,13 @@ Hooks.once("init", async function () {
         effectPanel: new EffectsPanel()
     };
 
+    CONFIG.Dice.rolls.push(MouseRoll);
+    CONFIG.Dice.terms["m"] = MouseDie;
+    CONFIG.Dice.terms["6"] = MouseDie;
+
     // Define custom Entity classes
     CONFIG.Actor.documentClass = MouseGuardActor;
     CONFIG.Item.documentClass = MouseGuardItem;
-    CONFIG.Dice.rolls.push(MouseRoll);
 
     CONFIG.Combatant.documentClass = MouseCombatant;
     CONFIG.Combat.documentClass = MouseCombat;
@@ -142,9 +140,6 @@ Hooks.once("init", async function () {
 //Hooks.on("hotbarDrop", (bar, data, slot) => createMouseGuardMacro(data, slot));
 
 Hooks.once("init", async function () {
-    CONFIG.Dice.terms["m"] = MouseDie;
-    CONFIG.Dice.terms["6"] = MouseDie;
-
     game.socket.on("system.mouseguard", (data) => {
         if (data.action === "askGoal") MouseSocket.askGoal(data);
         if (data.action === "setGoal") MouseSocket.setGoal(data);
@@ -155,14 +150,6 @@ Hooks.once("init", async function () {
     await registerTours();
 });
 
-//                labels: [
-//    "systems/mouseguard/assets/dice/snake.png",
-//    "systems/mouseguard/assets/dice/snake.png",
-//    "systems/mouseguard/assets/dice/snake.png",
-//    "systems/mouseguard/assets/dice/sword.png",
-//    "systems/mouseguard/assets/dice/sword.png",
-//    "systems/mouseguard/assets/dice/axe.png"
-//],
 Hooks.once("diceSoNiceReady", (dice3d) => {
     let dicetheme = "mouseguard";
     if (!dicetheme || dicetheme == "mouseguard") {
@@ -221,16 +208,13 @@ Hooks.on("renderSidebarTab", (app, html, data) => {
             updateDisplay(game.mouseguard.RollCount);
         });
 
-        $content.find(".mouse_roll_button").on("click", (event) => {
+        $content.find(".mouse_roll_button").on("click", async (event) => {
             event.preventDefault();
-            let $self = $(event.currentTarget);
-            let dataset = event.currentTarget.dataset;
-
             if (game.mouseguard.RollCount > 0) {
                 let actor =
                     game.user.character ?? canvas.tokens.controlled[0]?.actor;
-                var roll = new MouseRoll(game.mouseguard.RollCount + "dmcs>3");
-                roll.evaluate({ async: true });
+                var roll = new Roll(game.mouseguard.RollCount + "dmcs>3");
+                await roll.evaluate();
                 roll.toMessage({
                     user: game.user.id,
                     flavor: game.mouseguard.RollMessage,
