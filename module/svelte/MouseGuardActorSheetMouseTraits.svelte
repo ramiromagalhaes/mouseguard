@@ -16,7 +16,7 @@
 <largecard>
     <div class="item-controls item-create">
         <a
-            on:click={openCompendium()}
+            onclick={openCompendium()}
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddTrait")}
             data-type="wise"
@@ -29,7 +29,7 @@
         <trait>
             <div name={trait.id}>
                 <label
-                    on:click={(e) =>
+                    onclick={(e) =>
                         setMouseDice(
                             sheet,
                             trait.system.level,
@@ -44,7 +44,7 @@
                     min="1"
                     max="3"
                     value={trait.system.level}
-                    on:change={(e) =>
+                    onchange={(e) =>
                         updateRating(
                             sheet,
                             e.target.name,
@@ -57,7 +57,7 @@
                     {#each { length: 1 } as _, i}
                         {#if trait.system.usedfor > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         trait.id,
@@ -68,7 +68,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         trait.id,
@@ -85,7 +85,7 @@
                     {#each { length: 6 } as _, i}
                         {#if trait.system.usedagainst > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         trait.id,
@@ -96,7 +96,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         trait.id,
@@ -111,7 +111,7 @@
             </div>
             <div class="item-controls">
                 <a
-                    on:click={sheet?._onItemDelete(trait.id)}
+                    onclick={sheet?._onItemDelete(trait.id)}
                     class="item-control item-delete"
                     title="Delete Item"><i class="fas fa-trash"></i></a
                 >

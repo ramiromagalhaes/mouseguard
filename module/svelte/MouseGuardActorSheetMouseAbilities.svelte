@@ -17,7 +17,7 @@
         <ability>
             <div name={ability.id}>
                 <label
-                    on:click={(e) =>
+                    onclick={(e) =>
                         setMouseDice(
                             sheet,
                             ability.system.rating,
@@ -31,7 +31,7 @@
                     type="number"
                     min="0"
                     value={ability.system.rating}
-                    on:change={(e) =>
+                    onchange={(e) =>
                         updateRating(
                             sheet,
                             e.target.name,
@@ -45,7 +45,7 @@
                         type="number"
                         min="0"
                         value={ability.system.tax}
-                        on:change={(e) =>
+                        onchange={(e) =>
                             updateRating(
                                 sheet,
                                 e.target.name,
@@ -59,7 +59,7 @@
                     {#each { length: parseInt(ability.system.rating) + 1 } as _, i}
                         {#if ability.system.pass > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         ability.id,
@@ -70,7 +70,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         ability.id,
@@ -87,7 +87,7 @@
                     {#each { length: parseInt(ability.system.rating) } as _, i}
                         {#if ability.system.fail > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         ability.id,
@@ -98,7 +98,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         ability.id,
@@ -169,15 +169,13 @@
         cursor: pointer;
     }
 
-    label:hover {
-    }
-
     .header {
         font-family: "Germania One", cursive;
         font-size: large;
         width: 100%;
         display: block;
     }
+
     .checkmark:after {
         content: "✔";
         display: block;

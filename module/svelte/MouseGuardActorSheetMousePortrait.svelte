@@ -28,7 +28,7 @@
 
 <portrait>
     <img
-        on:click={filePicker}
+        onclick={filePicker}
         class="profile-img"
         src={data.img}
         data-edit="img"

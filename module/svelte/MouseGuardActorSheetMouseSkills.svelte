@@ -16,7 +16,7 @@
 <largecard>
     <div class="item-controls item-create">
         <a
-            on:click={openSkillsCompendium()}
+            onclick={openSkillsCompendium()}
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddSkill")}
             data-type="wise"
@@ -29,7 +29,7 @@
         <skill>
             <div name={skill.id}>
                 <label
-                    on:click={(e) =>
+                    onclick={(e) =>
                         setMouseDice(
                             sheet,
                             skill.system.rank,
@@ -43,7 +43,7 @@
                     type="number"
                     min="0"
                     value={skill.system.rank}
-                    on:change={(e) =>
+                    onchange={(e) =>
                         updateRating(
                             sheet,
                             e.target.name,
@@ -56,7 +56,7 @@
                     {#each { length: parseInt(skill.system.rank) + 1 } as _, i}
                         {#if skill.system.pass > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         skill.id,
@@ -67,7 +67,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         skill.id,
@@ -84,7 +84,7 @@
                     {#each { length: parseInt(skill.system.rank) } as _, i}
                         {#if skill.system.fail > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         skill.id,
@@ -95,7 +95,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         skill.id,
@@ -110,7 +110,7 @@
             </div>
             <div class="item-controls">
                 <a
-                    on:click={sheet?._onItemDelete(skill.id)}
+                    onclick={sheet?._onItemDelete(skill.id)}
                     class="item-control item-delete"
                     title="Delete Item"><i class="fas fa-trash"></i></a
                 >
