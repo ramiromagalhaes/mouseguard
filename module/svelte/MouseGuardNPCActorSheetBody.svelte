@@ -22,7 +22,7 @@
                 <ability>
                     <div name={ability.id}>
                         <label
-                            on:click={(e) =>
+                            onclick={(e) =>
                                 setMouseDice(sheet, ability.system.rating)}
                             class="header"
                             ><a>{game.i18n.localize(ability.name)}</a>:
@@ -32,7 +32,7 @@
                             type="number"
                             min="0"
                             value={ability.system.rating}
-                            on:change={(e) =>
+                            onchange={(e) =>
                                 updateRating(
                                     sheet,
                                     e.target.name,
@@ -55,7 +55,7 @@
                 <skill>
                     <div name={skill.id}>
                         <label
-                            on:click={(e) =>
+                            onclick={(e) =>
                                 setMouseDice(
                                     sheet,
                                     skill.system.rank,
@@ -68,7 +68,7 @@
                             name={skill.id}
                             type="number"
                             value={skill.system.rank}
-                            on:change={(e) =>
+                            onchange={(e) =>
                                 updateRating(
                                     sheet,
                                     e.target.name,
@@ -79,7 +79,7 @@
                     </div>
                     <div class="item-controls">
                         <a
-                            on:click={sheet?._onItemDelete(skill._id)}
+                            onclick={sheet?._onItemDelete(skill._id)}
                             class="item-control item-delete"
                             title="Delete Item"><i class="fas fa-trash" /></a
                         >
@@ -98,7 +98,7 @@
                 <trait>
                     <div name={trait.id}>
                         <label
-                            on:click={(e) =>
+                            onclick={(e) =>
                                 setMouseDice(
                                     sheet,
                                     trait.system.level,
@@ -111,7 +111,7 @@
                             name={trait.id}
                             type="number"
                             value={trait.system.level}
-                            on:change={(e) =>
+                            onchange={(e) =>
                                 updateRating(
                                     sheet,
                                     e.target.name,
@@ -122,7 +122,7 @@
                     </div>
                     <div class="item-controls">
                         <a
-                            on:click={sheet?._onItemDelete(trait._id)}
+                            onclick={sheet?._onItemDelete(trait._id)}
                             class="item-control item-delete"
                             title="Delete Item"><i class="fas fa-trash"></i></a
                         >
@@ -139,7 +139,7 @@
         <wise>
             <div name={wise.id}>
                 <label
-                    on:click={(e) =>
+                    onclick={(e) =>
                         setMouseDice(
                             sheet,
                             wise.system.rank,
@@ -152,7 +152,7 @@
                     name={wise.id}
                     type="number"
                     value={wise.system.rank}
-                    on:change={(e) =>
+                    onchange={(e) =>
                         updateRating(
                             sheet,
                             e.target.name,
@@ -163,7 +163,7 @@
             </div>
             <div class="item-controls">
                 <a
-                    on:click={sheet?._onItemDelete(wise._id)}
+                    onclick={sheet?._onItemDelete(wise._id)}
                     class="item-control item-delete"
                     title="Delete Item"><i class="fas fa-trash"></i></a
                 >

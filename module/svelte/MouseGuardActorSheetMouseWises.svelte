@@ -14,7 +14,7 @@
 <largecard>
     <div class="item-controls item-create">
         <a
-            on:click={sheet?._onItemCreate.bind(sheet)}
+            onclick={sheet?._onItemCreate.bind(sheet)}
             class="item-control"
             title={game.i18n.localize("MOUSEGUARD.AddWise")}
             data-type="wise"
@@ -27,7 +27,7 @@
         <wise>
             <div name={wise.id}>
                 <label
-                    on:click={(e) =>
+                    onclick={(e) =>
                         setMouseDice(
                             sheet,
                             wise.system.rank,
@@ -41,7 +41,7 @@
                     type="number"
                     min="0"
                     value={wise.system.rank}
-                    on:change={(e) =>
+                    onchange={(e) =>
                         updateRating(
                             sheet,
                             e.target.name,
@@ -54,7 +54,7 @@
                     {#each { length: parseInt(wise.system.rank) + 1 } as _, i}
                         {#if wise.system.pass > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         wise.id,
@@ -65,7 +65,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         wise.id,
@@ -82,7 +82,7 @@
                     {#each { length: parseInt(wise.system.rank) } as _, i}
                         {#if wise.system.fail > i}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         wise.id,
@@ -93,7 +93,7 @@
                             ></div>
                         {:else}
                             <div
-                                on:click={(e) =>
+                                onclick={(e) =>
                                     updateRating(
                                         sheet,
                                         wise.id,
@@ -108,7 +108,7 @@
             </div>
             <div class="item-controls">
                 <a
-                    on:click={sheet?._onItemDelete(wise.id)}
+                    onclick={sheet?._onItemDelete(wise.id)}
                     class="item-control item-delete"
                     title="Delete Item"><i class="fas fa-trash"></i></a
                 >
